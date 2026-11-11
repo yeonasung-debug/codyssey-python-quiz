@@ -4,3 +4,9 @@ class Quiz:
         self.question = question
         self.options = options
         self.answer = answer
+
+    def check_answer(self, user_answer):
+        return self.answer == user_answer
+
+
+
