@@ -51,27 +51,27 @@ quiz5 = Quiz(
     3
 )
 game1.add_quiz(quiz5)
-score = 0
-for quiz in game1.quizzes:
-    print(quiz.question)
 
-    for number, option in enumerate(quiz.options, start=1):
-        print(f"{number}. {option}")
 
-    user_answer = input("정답 번호를 입력하세요 (1~4): ")
+def play_quiz():
+    score = 0
 
-    if user_answer == str(quiz.answer):
-        print("정답입니다!")
-        score +=1
-    else:
-        print("오답입니다!")
+    for quiz in game1.quizzes:
+        print(quiz.question)
 
-print(f"최종점수: {score}점")
+        for number, option in enumerate(quiz.options, start=1):
+            print(f"{number}. {option}")
 
-print("\n=== 등록된 퀴즈 목록 ===")
+        user_answer = input("정답 번호를 입력하세요 (1~4): ")
 
-for number, quiz in enumerate(game1.quizzes, start=1):
-    print(f"{number}. {quiz.question}")
+        if user_answer == str(quiz.answer):
+            print("정답입니다!")
+            score += 1
+        else:
+            print("오답입니다!")
+
+    print(f"최종점수: {score}점")
+
 
 while True:
     print("\n===== Python 퀴즈 게임 =====")
@@ -83,8 +83,19 @@ while True:
 
     menu = input("메뉴 번호를 선택하세요: ")
 
-    if menu == "5":
+    
+    if menu == "1":
+        play_quiz()
+
+    elif menu == "3":
+        print("\n=== 등록된 퀴즈 목록 ===")
+
+        for number, quiz in enumerate(game1.quizzes, start=1):
+            print(f"{number}. {quiz.question}")
+
+    elif menu == "5":
         print("게임을 종료합니다.")
         break
+
     else:
-        print("선택한 메뉴:", menu)    
+        print("선택한 메뉴:", menu)
