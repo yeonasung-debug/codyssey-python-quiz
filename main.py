@@ -72,3 +72,19 @@ print("\n=== 등록된 퀴즈 목록 ===")
 
 for number, quiz in enumerate(game1.quizzes, start=1):
     print(f"{number}. {quiz.question}")
+
+while True:
+    print("\n===== Python 퀴즈 게임 =====")
+    print("1. 퀴즈 풀기")
+    print("2. 문제 추가")
+    print("3. 문제 목록 확인")
+    print("4. 최고 점수 확인")
+    print("5. 종료")
+
+    menu = input("메뉴 번호를 선택하세요: ")
+
+    if menu == "5":
+        print("게임을 종료합니다.")
+        break
+    else:
+        print("선택한 메뉴:", menu)    
