@@ -37,6 +37,8 @@ quiz2 = Quiz(
 
 game1.add_quiz(quiz2)
 
+score = 0
+
 for quiz in game1.quizzes:
     print(quiz.question)
 
@@ -47,5 +49,8 @@ for quiz in game1.quizzes:
 
     if user_answer == str(quiz.answer):
         print("정답입니다!")
+        score +=1
     else:
         print("오답입니다!")
+
+print(f"최종점수: {score}점")

@@ -149,3 +149,17 @@
 
 #### 구현 코드
 ![정답 판정 코드](evidence/6-9-answer-check-code.png)
+
+
+### 7-5. 점수 계산 기능 구현 (실습 6-10)
+
+- score 변수를 0으로 초기화
+- 정답을 맞힐 때마다 score += 1로 점수 증가
+- 모든 문제 종료 후 최종 점수 출력
+
+#### 실행 결과
+![점수 계산 실행 결과](evidence/6-10-score-result.png)
+
+#### 구현 코드
+![점수 계산 코드](evidence/6-10-score-code.png)
+  
