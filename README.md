@@ -163,3 +163,17 @@
 #### 구현 코드
 ![점수 계산 코드](evidence/6-10-score-code.png)
   
+### 7-6. 퀴즈 5문항 구현 (실습 6-11)
+
+- Python 기초 문법 관련 퀴즈 3개 추가
+- 전체 퀴즈 5문항 구성 완료
+- 각 문항에 선택지 4개와 정답 번호 저장
+- add_quiz()로 QuizGame에 문제 등록
+- for 반복문으로 전체 문제 출력
+- 정답 판정 및 최종 점수 계산 확인
+
+#### 구현 코드
+![퀴즈 5문항 코드](evidence/6-11-five-quizzes-code.png)
+
+#### 실행 결과
+![퀴즈 실행](evidence/6-11-five-quizzes-results.png)
