@@ -73,6 +73,26 @@ def play_quiz():
     print(f"최종점수: {score}점")
 
 
+
+def add_new_quiz():
+    print("\n=== 새로운 퀴즈 추가 ===")
+
+    question = input("문제를 입력하세요: ")
+
+    options = []
+
+    for number in range(1, 5):
+        option = input(f"{number}번 선택지: ")
+        options.append(option)
+
+    answer = int(input("정답 번호를 입력하세요 (1~4): "))
+
+    new_quiz = Quiz(question, options, answer)
+    game1.add_quiz(new_quiz)
+
+    print("새로운 퀴즈가 등록되었습니다!")
+
+
 while True:
     print("\n===== Python 퀴즈 게임 =====")
     print("1. 퀴즈 풀기")
@@ -86,6 +106,11 @@ while True:
     
     if menu == "1":
         play_quiz()
+
+
+    elif menu == "2":
+        add_new_quiz()
+
 
     elif menu == "3":
         print("\n=== 등록된 퀴즈 목록 ===")
