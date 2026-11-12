@@ -67,3 +67,8 @@ for quiz in game1.quizzes:
         print("오답입니다!")
 
 print(f"최종점수: {score}점")
+
+print("\n=== 등록된 퀴즈 목록 ===")
+
+for number, quiz in enumerate(game1.quizzes, start=1):
+    print(f"{number}. {quiz.question}")

@@ -177,3 +177,16 @@
 
 #### 실행 결과
 ![퀴즈 실행](evidence/6-11-five-quizzes-results.png)
+
+### 7-7. 퀴즈 문제 목록 확인 기능 (실습 6-12)
+
+- game1.quizzes에 저장된 퀴즈 목록 확인
+- for 반복문을 사용하여 전체 문제 출력
+- enumerate()로 문제 번호 자동 생성
+- 정답 입력 없이 문제 제목 5개 출력
+
+#### 실행 결과
+![퀴즈 목록 실행 결과](evidence/6-12-quiz-list-result.png)
+
+#### 구현 코드
+![퀴즈 목록 코드](evidence/6-12-quiz-list-code.png)
