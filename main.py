@@ -73,6 +73,10 @@ def play_quiz():
 
     print(f"최종점수: {score}점")
 
+    if score > game1.high_score:
+        game1.high_score = score
+        print("새로운 최고 점수입니다!")
+
 
 
 def add_new_quiz():
@@ -108,6 +112,27 @@ def save_quizzes():
 
     print("퀴즈 데이터가 저장되었습니다!")
 
+def load_quizzes():
+    try:
+        with open("state.json", "r", encoding="utf-8") as file:
+            quiz_data = json.load(file)
+
+        game1.quizzes = []
+
+        for data in quiz_data:
+            quiz = Quiz(
+                data["question"],
+                data["options"],
+                data["answer"]
+            )
+            game1.add_quiz(quiz)
+
+        print("저장된 퀴즈를 불러왔습니다!")
+
+    except FileNotFoundError:
+        print("저장된 파일이 없어 기본 퀴즈를 사용합니다.")
+
+load_quizzes()
 
 while True:
     print("\n===== Python 퀴즈 게임 =====")
