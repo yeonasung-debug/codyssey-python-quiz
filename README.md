@@ -257,10 +257,33 @@
 - 현재는 메모리에만 저장되므로 프로그램 재시작 시 추가 문제가 유지되지 않음
 
 #### 문제 추가 코드
-![문제 추가 코드](evidence/6-16-add-new-quiz-code.png)
+![문제 추가 코드](evidence/6-16-add-quiz-code.png)
 
 #### 문제 등록 실행 결과
-![문제 등록 결과](evidence/6-16-add-new-quiz-result.png)
+![문제 등록 결과] + ![문제 목록 결과](evidence/6-16-quiz-list-result.png)
 
 #### 6문항 목록 확인
-![문제 목록 결과](evidence/6-16-quiz-list-result.png)
+위 의 문제 등록 실행 결과에 함께 나타남.
+
+### 7-12. JSON 파일 저장 기능 구현 (실습 6-17)
+
+- json 모듈을 활용하여 퀴즈 데이터 저장 기능 구현
+- save_quizzes() 함수 생성
+- game1.quizzes에 등록된 퀴즈를 반복문으로 처리
+- question, options, answer 정보를 딕셔너리로 변환
+- json.dump()를 사용하여 state.json 파일에 저장
+- ensure_ascii=False로 한글 데이터 저장
+- indent=4로 JSON 파일 가독성 향상
+- 메인 메뉴 2번에서 문제 추가 후 자동 저장
+- state.json 파일에 문제 정보가 기록된 것을 확인
+- 잘못된 정답 입력 시 ValueError가 발생하는 것을 확인
+- JSON 불러오기 및 입력 예외 처리는 이후 단계에서 구현 예정
+
+#### JSON 저장 코드
+![JSON 저장 코드](evidence/6-17-json-save-code.png)
+
+#### 실행 결과
+![JSON 저장 실행 결과](evidence/6-17-json-save-result.png)
+
+#### state.json 저장 확인
+![JSON 파일 내용](evidence/6-17-state-json.png)

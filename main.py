@@ -1,3 +1,4 @@
+import json
 
 class Quiz:
     def __init__(self, question, options, answer):
@@ -92,6 +93,21 @@ def add_new_quiz():
 
     print("새로운 퀴즈가 등록되었습니다!")
 
+def save_quizzes():
+    quiz_data = []
+
+    for quiz in game1. quizzes:
+        quiz_data.append({
+            "question": quiz.question,
+            "options": quiz.options,
+            "answer": quiz.answer
+        })
+
+    with open("state.json", "w", encoding="utf-8") as file:
+        json.dump(quiz_data, file, ensure_ascii=False, indent=4)
+
+    print("퀴즈 데이터가 저장되었습니다!")
+
 
 while True:
     print("\n===== Python 퀴즈 게임 =====")
@@ -110,7 +126,7 @@ while True:
 
     elif menu == "2":
         add_new_quiz()
-
+        save_quizzes()
 
     elif menu == "3":
         print("\n=== 등록된 퀴즈 목록 ===")
