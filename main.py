@@ -159,6 +159,9 @@ while True:
         for number, quiz in enumerate(game1.quizzes, start=1):
             print(f"{number}. {quiz.question}")
 
+    elif menu == "4":
+        print(f"현재 최고 점수: {game1.high_score}점")
+
     elif menu == "5":
         print("게임을 종료합니다.")
         break
