@@ -63,7 +63,14 @@ def play_quiz():
         for number, option in enumerate(quiz.options, start=1):
             print(f"{number}. {option}")
 
-        user_answer = input("정답 번호를 입력하세요 (1~4): ")
+        while True:
+            user_answer = input("정답 번호를 입력하세요 (1~4): ")
+
+            if user_answer in ["1", "2", "3", "4"]:
+                break
+
+            else:
+                print("1~4 사이의 숫자를 입력해주세요.")
 
         if user_answer == str(quiz.answer):
             print("정답입니다!")
