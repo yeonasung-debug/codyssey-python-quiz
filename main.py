@@ -90,8 +90,18 @@ def add_new_quiz():
         option = input(f"{number}번 선택지: ")
         options.append(option)
 
-    answer = int(input("정답 번호를 입력하세요 (1~4): "))
+    while True:
+        try:
+            answer =  int(input("정답 번호를 입력하세요. (1~4): "))
 
+            if 1 <= answer <= 4:
+                break
+            else:
+                print("1~4 사이의 숫자를 입력해주세요.")
+        
+        except ValueError:
+            print("숫자만 입력해주세요.")
+ 
     new_quiz = Quiz(question, options, answer)
     game1.add_quiz(new_quiz)
 
