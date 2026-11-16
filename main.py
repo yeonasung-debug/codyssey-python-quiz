@@ -161,6 +161,8 @@ def load_quizzes():
 
     except FileNotFoundError:
         print("저장된 파일이 없어 기본 퀴즈를 사용합니다.")
+    except json.JSONDecodeError:
+        print("JSON 파일 형식이 잘못되었습니다. 기본 퀴즈를 사용합니다.")
 
 load_quizzes()
 

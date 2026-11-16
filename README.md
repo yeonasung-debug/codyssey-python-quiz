@@ -414,3 +414,33 @@ JSON 파일 저장 결과
 퀴즈 입력 검증 실행 결과
 
 ![퀴즈 입력 검증 결과](evidence/6-23-quiz-input-result.png)
+
+
+### 7-19. JSON 파일 오류 처리 (실습 6-24)
+
+**학습 목표**
+- Python의 예외 처리 기능 이해
+- JSON 파일이 없거나 형식이 잘못된 경우 오류 처리
+- 오류 발생 시 프로그램이 종료되지 않도록 개선
+
+**구현 내용**
+1. load_quizzes() 함수에 try-except 예외 처리 적용
+2. FileNotFoundError를 이용해 파일이 없는 경우 처리
+3. json.JSONDecodeError를 이용해 잘못된 JSON 형식 처리
+4. 오류 발생 시 안내 메시지를 출력하고 기본 퀴즈를 사용할 수 있도록 구현
+
+**실행 결과**
+- 정상적인 JSON 파일에서는 퀴즈와 최고 점수를 불러옴
+- JSON 형식이 잘못된 경우 오류 안내 메시지 출력
+- 오류 발생 후에도 프로그램이 종료되지 않고 메인 메뉴 실행
+- 테스트 후 백업 파일을 이용해 원본 JSON 데이터 복구
+
+**증빙 이미지**
+
+JSON 오류 처리 코드
+
+![JSON 오류 처리 코드](evidence/6-24-json-error-code.png)
+
+JSON 오류 처리 실행 결과
+
+![JSON 오류 처리 결과](evidence/6-24-json-error-result.png)
