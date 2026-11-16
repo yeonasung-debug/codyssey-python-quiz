@@ -321,3 +321,35 @@
 
 #### 실행 결과
 ![최고 점수 확인 결과](evidence/6-20-high-score-menu-result.png)
+
+
+### 7-16. 최고 점수 JSON 저장 및 불러오기 (실습 6-21)
+
+**학습 목표**
+- 최고 점수를 JSON 파일에 저장하고 불러오기
+- 프로그램을 종료하고 다시 실행해도 최고 점수가 유지되도록 구현
+
+**구현 내용**
+1. `save_quizzes()` 함수에서 퀴즈 목록과 최고 점수를 함께 저장
+2. `state.json`에 `high_score`와 `quizzes` 항목 생성
+3. `load_quizzes()` 함수에서 저장된 최고 점수를 불러오기
+4. 기존 JSON 리스트 형식도 불러올 수 있도록 `isinstance()` 사용
+5. 퀴즈 최고 점수 갱신 및 프로그램 종료 시 저장 기능 실행
+
+**실행 결과**
+- 최고 점수와 퀴즈 목록이 JSON 파일에 정상적으로 저장됨
+- 프로그램 재실행 후에도 기존 최고 점수가 유지됨
+
+**증빙 이미지**
+
+최고 점수 저장 및 불러오기 코드
+
+![JSON 저장 및 불러오기 코드](evidence/6-21-json-high-score-code.png)
+
+JSON 파일 저장 결과
+
+![JSON 최고 점수 저장](evidence/6-21-json-high-score-file.png)
+
+프로그램 재실행 후 최고 점수 유지
+
+![최고 점수 유지](evidence/6-21-high-score-persistence.png)

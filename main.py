@@ -76,7 +76,7 @@ def play_quiz():
     if score > game1.high_score:
         game1.high_score = score
         print("새로운 최고 점수입니다!")
-
+        save_quizzes()
 
 
 def add_new_quiz():
@@ -107,27 +107,40 @@ def save_quizzes():
             "answer": quiz.answer
         })
 
-    with open("state.json", "w", encoding="utf-8") as file:
-        json.dump(quiz_data, file, ensure_ascii=False, indent=4)
+    data = {
+        "high_score": game1.high_score,
+        "quizzes": quiz_data
+    }
 
-    print("퀴즈 데이터가 저장되었습니다!")
+    with open("state.json", "w", encoding="utf-8") as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+
+
+    print("퀴즈와 최고 점수가 저장되었습니다!")
 
 def load_quizzes():
     try:
         with open("state.json", "r", encoding="utf-8") as file:
-            quiz_data = json.load(file)
+            data = json.load(file)
 
-        game1.quizzes = []
+        if isinstance(data, list):
+            quiz_data = data
+            game1.high_score = 0
+        else:
+            quiz_data =data["quizzes"]
+            game1.high_score = data.get("high_score", 0)
+        
+        game1.quizzes = [] 
 
-        for data in quiz_data:
+        for item in quiz_data:
             quiz = Quiz(
-                data["question"],
-                data["options"],
-                data["answer"]
+                item["question"],
+                item["options"],
+                item["answer"],
             )
             game1.add_quiz(quiz)
 
-        print("저장된 퀴즈를 불러왔습니다!")
+        print("퀴즈와 최고 점수를 불러왔습니다!")
 
     except FileNotFoundError:
         print("저장된 파일이 없어 기본 퀴즈를 사용합니다.")
@@ -163,6 +176,7 @@ while True:
         print(f"현재 최고 점수: {game1.high_score}점")
 
     elif menu == "5":
+        save_quizzes()
         print("게임을 종료합니다.")
         break
 
