@@ -485,3 +485,56 @@ JSON 오류 처리 실행 결과
 - try-except를 활용한 오류 처리 기능 구현
 - JSON 파일을 활용한 퀴즈 및 최고 점수 데이터 관리
 - Git과 GitHub를 이용한 프로젝트 버전 관리
+
+
+### 7-21. Git 브랜치 관리 및 병합 증빙 (실습 6-26)
+
+**학습 목표**
+- Git 브랜치를 활용한 기능별 개발
+- 기능 개발 브랜치와 main 브랜치 병합
+- Git 커밋 기록 및 병합 내역 확인
+
+**브랜치 구성**
+- main: 최종 제출 및 안정적인 코드 관리
+- feature/quiz-play: 퀴즈 게임 기능 개발
+- backup/before-merge: 이전 병합 작업의 백업 브랜치
+
+**Git 커밋 관리**
+- 기능 구현 단위로 Commit 수행
+- 10회 이상 기능별 Commit 기록 유지
+- git log 명령어로 커밋 내역 확인
+
+**브랜치 병합**
+1. feature/quiz-play 브랜치에서 기능 개발
+2. GitHub에 기능 개발 내용 Push
+3. main 브랜치로 이동
+4. 원격 main 브랜치와 동기화
+5. --no-ff 옵션을 사용하여 기능 브랜치 병합
+6. 병합 커밋 생성 및 Git 로그 확인
+
+**병합 결과**
+- 병합 커밋: 8010805
+- 커밋 메시지: Merge quiz game feature into main
+- 기존 기능 개발 커밋 기록 유지
+
+**주요 Git 명령어**
+```bash
+git branch -a
+git log --oneline --all --graph
+git merge --no-ff feature/quiz-play
+git status
+```
+
+**증빙 이미지**
+
+브랜치 및 병합 기록
+
+![Git 브랜치 병합 기록](evidence/6-26-branch-merge-evidence.png)
+
+**GitHub 원격 저장소**
+
+https://github.com/yeonasung-debug/codyssey-python-quiz
+
+**Git 커밋 기록 증빙**
+
+![Git 커밋 내역](evidence/6-26-commit-history.png)
